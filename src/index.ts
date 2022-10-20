@@ -31,8 +31,6 @@ app.use("/api/users", userController);
 // app.use("/api/forms", formController);
 // app.use("/api/centers", centerController);
 // app.use("/api/campaigns", campaignController);
-app.use(errorHandler); //Error handling
-app.use(notFoundHandler); //404
 
 //SERVER
 app.get("/", (req: Request, res: Response): void => {
@@ -42,3 +40,6 @@ app.get("/", (req: Request, res: Response): void => {
 app.listen(PORT, (): void => {
   console.log(`Server Running here 👉 http://localhost:${PORT}`);
 });
+
+app.use(errorHandler); //Error handling
+app.use(notFoundHandler); //404
