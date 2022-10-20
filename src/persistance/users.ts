@@ -32,7 +32,7 @@ export const addUser = async (newUserData: userInterface) => {
   try {
     const existingUser = await UserModel.findOne({ email });
 
-    if (existingUser) return { success: false, error: "El usuario ya existe" };
+    if (existingUser) return { success: false, error: "User already exists" };
 
     const doc = new UserModel(newUserData);
     await doc.save();
@@ -45,8 +45,6 @@ export const addUser = async (newUserData: userInterface) => {
 };
 
 export const deleteUsers = async (idArray: string[]) => {
-  console.log("delete users are...:");
-  console.log(idArray);
   try {
     const deletedCount = await UserModel.deleteMany({
       _id: { $in: idArray },
@@ -64,7 +62,7 @@ export const updateUser = async (user: userInterface) => {
     const existingUser = await UserModel.findOne({ _id: user._id });
 
     if (!existingUser)
-      return { success: false, error: `El usuario ${user.email} no existe` };
+      return { success: false, error: `User: ${user.email} doesn't exist` };
 
     const doc = await UserModel.findOneAndUpdate(
       { _id: existingUser._id },
