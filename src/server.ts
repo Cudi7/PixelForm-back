@@ -38,7 +38,7 @@ app.get("/", (req: Request, res: Response): void => {
 });
 
 app.listen(PORT, (): void => {
-  console.log(`Server Running here 👉 http://localhost:${PORT}`);
+  console.log(`Server Running here 👉 https://pixelformback.onrender.com/`);
 });
 
 app.use(errorHandler); //Error handling

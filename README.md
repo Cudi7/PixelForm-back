@@ -24,12 +24,12 @@ Live <code>API</code> endpoints examples:
 </br>
 
 <ul>
-<li> <a href="http://localhost:5000/api/users">
+<li> <a href="http://pixelformback.onrender.com/api/users">
     getUsers
   </a>
 </li>
 
-<li> <a href="http://localhost:5000/api/texts">
+<li> <a href="http://pixelformback.onrender.com/api/texts">
     getTexts
   </a>
 </li>
@@ -102,7 +102,7 @@ PixelForm
 </a> frontend
 
 ```js
-POST--> http://localhost:5000/api/texts/new
+POST--> http://pixelformback.onrender.com/api/texts/new
 
 {
   "title": "Test Text",
@@ -110,7 +110,7 @@ POST--> http://localhost:5000/api/texts/new
   "type": "social"
 }
 
-GET--> http://localhost:5000/api/texts
+GET--> http://pixelformback.onrender.com/api/texts
 
 ```
 
