@@ -3,13 +3,13 @@ import { CampaignModel } from "../models/CampaignModel";
 
 export const getCampaigns = async () => {
   try {
-    const campañas: Array<campaignInterface> = await CampaignModel.find({});
+    const campaigns: Array<campaignInterface> = await CampaignModel.find({});
 
-    if (!campañas[0]._id) return { success: false, error: "Algo ha ido mal" };
+    if (!campaigns.length)
+      return { success: false, error: "It looks like there are not campaigns" };
 
-    return { success: true, campañas };
+    return { success: true, campaigns };
   } catch (error: any) {
-    console.log(error.message);
     return { success: false, error: error.message };
   }
 };

@@ -1,4 +1,4 @@
-export interface formularioInterface {
+export interface formInterface {
   _id: string;
   creado: Date;
   creador_id: string;

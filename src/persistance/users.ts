@@ -66,7 +66,7 @@ export const updateUser = async (user: userInterface) => {
 
     const doc = await UserModel.findOneAndUpdate(
       { _id: existingUser._id },
-      user,
+      { ...user, history: [...existingUser.history, user.history] },
       {
         returnOriginal: false,
       }

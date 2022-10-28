@@ -1,28 +1,28 @@
-// import app, { Request, Response } from "express";
-// import { addCampaign, getCampaigns } from "../../persistance/campaigns";
+import app, { Request, Response } from "express";
+import { addCampaign, getCampaigns } from "../../persistance/campaigns";
 
-// const route = app.Router();
+const route = app.Router();
 
 // //GET all campanas -> /
-// route.get("/", async (req: Request, res: Response) => {
-//   const campanas = await getCampaigns();
+route.get("/", async (req: Request, res: Response) => {
+  const campaigns = await getCampaigns();
 
-//   return campanas.success
-//     ? res.status(200).json(campanas)
-//     : res.status(400).json(campanas);
-// });
+  return campaigns.success
+    ? res.status(200).json(campaigns)
+    : res.status(400).json(campaigns);
+});
 
 // //POST new campana -> /new
-// route.post(
-//   "/new",
-//   //textExists,
-//   async (req: Request, res: Response) => {
-//     const campana = await addCampaign(req.body);
+route.post(
+  "/",
+  //textExists,
+  async (req: Request, res: Response) => {
+    const campaign = await addCampaign(req.body);
 
-//     return campana.success
-//       ? res.status(200).json(campana)
-//       : res.status(400).json(campana);
-//   }
-// );
+    return campaign.success
+      ? res.status(200).json(campaign)
+      : res.status(400).json(campaign);
+  }
+);
 
-// export default route;
+export default route;

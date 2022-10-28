@@ -6,11 +6,12 @@ import morgan from "morgan";
 import connectDB from "./config/db";
 import textController from "./controllers/text/textController";
 import userController from "./controllers/user/userController";
+import campaignController from "./controllers/campaign/campaignController";
+
 // import formController from "./controllers/form/formController";
 // import centerController from "./controllers/center/centerController";
 import { errorHandler } from "./middleware/errorHandler";
 import { notFoundHandler } from "./middleware/notFound";
-// import campaignController from "./controllers/campaign/campaignController";
 
 // //Initial configuration
 dotenv.config();
@@ -30,7 +31,7 @@ app.use("/api/texts", textController);
 app.use("/api/users", userController);
 // app.use("/api/forms", formController);
 // app.use("/api/centers", centerController);
-// app.use("/api/campaigns", campaignController);
+app.use("/api/campaigns", campaignController);
 
 //SERVER
 app.get("/", (req: Request, res: Response): void => {

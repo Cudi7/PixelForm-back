@@ -15,4 +15,11 @@ export interface userInterface {
   role: string;
   date: Date;
   type: string;
+  history: [
+    {
+      modificadoPor: string;
+      date: Date;
+      action: string;
+    }
+  ];
 }

@@ -1,11 +1,9 @@
-import { formularioInterface } from "../interfaces/formularioInterface";
-import { FormularioModel } from "../models/FormularioModel";
+import { formInterface } from "../interfaces/formInterface";
+import { FormModel } from "../models/FormModel.ts";
 
 export const getFormularios = async () => {
   try {
-    const formularios: Array<formularioInterface> = await FormularioModel.find(
-      {}
-    );
+    const formularios: Array<formInterface> = await FormModel.find({});
 
     if (!formularios[0]._id)
       return { success: false, error: "Algo ha ido mal" };
@@ -17,9 +15,9 @@ export const getFormularios = async () => {
   }
 };
 
-export const addFormulario = async (formularioData: formularioInterface) => {
+export const addFormulario = async (formularioData: formInterface) => {
   try {
-    const doc = new FormularioModel(formularioData);
+    const doc = new FormModel(formularioData);
     await doc.save();
 
     return { success: true, text: doc };

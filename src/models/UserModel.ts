@@ -17,6 +17,13 @@ const UserSchema = new Schema<userInterface>({
   role: { type: String, required: true },
   date: { type: Date, default: Date.now },
   type: String,
+  history: [
+    {
+      modificadoPor: String,
+      date: { type: Date, default: Date.now },
+      action: String,
+    },
+  ],
 });
 
 export const UserModel = model<userInterface>("Usuarios", UserSchema);
